@@ -136,13 +136,13 @@ $(function(){
 		openApplicationWindow: function( options ) {
 			var application = options.application;
 
+			this.setLoading( false );
+
 			// create window if it is not exists
 			var appWindowId = '#' + application.id + '-window';
 			if( this.$content.parent().find( appWindowId ).length < 1 ) {
 				new platform.ApplicationWindowView({ model: application, parentView: this });
 			}
-
-			this.setLoading( false );
 		},
 
 		unpressShortcut: function( event ) {
