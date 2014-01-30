@@ -127,6 +127,7 @@ $(function(){
 			application = this.getActiveApllication( event );
 
 			if( application ) {
+				this.setLoading( true );
 				this.listenToOnce( application, 'application:ready', this.openApplicationWindow );
 				application.open();
 			}
@@ -140,6 +141,8 @@ $(function(){
 			if( this.$content.parent().find( appWindowId ).length < 1 ) {
 				new platform.ApplicationWindowView({ model: application, parentView: this });
 			}
+
+			this.setLoading( false );
 		},
 
 		unpressShortcut: function( event ) {
@@ -169,6 +172,11 @@ $(function(){
 
 			$contentArea.attr( 'width', this.$el.width() );
 			$contentArea.attr( 'height', this.$el.height() );
+		},
+
+		setLoading: function( flag ) {
+			var $loading = this.$el.find( '[data-cont="loading"]' );
+			flag ? $loading.addClass( 'active' ) : $loading.removeClass( 'active' );
 		}
 	});
 });
