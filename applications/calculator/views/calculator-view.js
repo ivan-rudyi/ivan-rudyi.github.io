@@ -193,8 +193,15 @@ $(function(){
 		},
 
 		getActiveElement: function( event ) {
-			var offsetX = event.offsetX || 0;
-			var offsetY = event.offsetY || 0;
+			var containerOffset = this.$el.parent().offset();
+			
+			// work only on chrome and firefox
+			var offsetX = event.clientX - containerOffset.left || 0;
+			var offsetY = event.clientY - containerOffset.top || 0;
+
+			// work only on chrome
+			// var offsetX = event.offsetX || 0;
+			// var offsetY = event.offsetY || 0;
 
 			var calculatorView = this;
 			var activeElement = null;
@@ -205,6 +212,8 @@ $(function(){
 					}
 				}
 			});
+
+
 
 			if( activeElement && !activeElement.isDisplay() ) {
 				return activeElement;

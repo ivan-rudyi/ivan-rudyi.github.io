@@ -86,11 +86,13 @@ $(function(){
 		startMove: function( event ) {
 			this.isDrag = true;
 			this.$el.css( 'opacity', 0.7 );
+
+			var windowOffset = this.$el.offset();
 			
 			// save cursor position
 			this.onDragCursorOffset = {
-				left: event.offsetX,
-				top: event.offsetY
+				left:  event.clientX - windowOffset.left,
+				top: event.clientY - windowOffset.top
 			};
 		},
 
@@ -114,6 +116,8 @@ $(function(){
 				if( nextPositionY + this.windowSize.height > this.displaySize.height ) {
 					nextPositionY = this.displaySize.height - this.windowSize.height;
 				}
+
+				
 
 				if( nextPositionX != this.currentPosition.left || nextPositionY != this.currentPosition.top ) {
 					this.setPosition( nextPositionX, nextPositionY );

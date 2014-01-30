@@ -105,8 +105,11 @@ $(function(){
 		},
 
 		getActiveApllication: function( event ) {
-			var offsetX = event.offsetX || 0;
-			var offsetY = event.offsetY || 0;
+			var displayOffset = this.$el.offset();
+			
+			var offsetX = event.clientX - displayOffset.left || 0;
+			var offsetY = event.offsetY - displayOffset.top  || 0;
+
 			currentShortcut = {
 				left: (offsetX - offsetX % this.shortcutConfig.width),
 				top: (offsetY - offsetY % this.shortcutConfig.height)
