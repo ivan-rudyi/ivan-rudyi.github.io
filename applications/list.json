@@ -1,0 +1,19 @@
+[
+    {
+        "id": "calculator",
+        "name": "Calculator",
+        "icon": "applications/calculator/assets/images/icon.png",
+        "url": "applications/calculator",
+        "index": 1,
+        "version": "1.0"
+    },
+
+    {
+        "id": "help",
+        "name": "Help",
+        "icon": "applications/help/assets/images/icon.png",
+        "url": "applications/help",
+        "index": 2,
+        "version": "1.0"
+    }
+]

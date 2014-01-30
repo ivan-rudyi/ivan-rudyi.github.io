@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- platform core stylesheets -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+	<script type="text/template" id="desktop-template">
+		<div id="<%- id %>-desktop" class="desktop">
+			<canvas></canvas>
+		</div>
+	</script>
+
+	<script type="text/template" id="application-window-template">
+		<div id="<%- id %>-window" class="window" data-cont="window">
+			<div class="header" data-cont="header">
+				<div class="title" data-action="move">
+					<%- title %>
+				</div>
+				<div class="btn-close" data-action="close">&times;</div>
+			</div>
+			<div class="content" data-cont="content">
+				<%= content %>
+			</div>
+			<div class="footer">
+				Version - <%- version %>
+			</div>
+		</div>
+	</script>
+
+	<div id="platform" class="container" ></div>
+
+	<!-- <div id="platform" class="platform">
+		
+	</div> -->
+
+	<!-- libraries -->
+	<script src="libraries/jquery-2.1.0.min.js"></script>
+	<script src="libraries/underscore-min.js"></script>
+	<script src="libraries/backbone-min.js"></script>
+
+	<!-- platform core scripts -->
+	<script src="core/models/application-model.js"></script>
+	<script src="core/collections/applications-collection.js"></script>
+	<script src="core/models/desktop-model.js"></script>
+	<script src="core/routers/platform-router.js"></script>
+	<script src="core/views/application-view.js"></script>
+	<script src="core/views/desktop-view.js"></script>
+
+	<!-- platform main script -->
+	<script src="core/platform.js"></script>
+</body>
+</html>

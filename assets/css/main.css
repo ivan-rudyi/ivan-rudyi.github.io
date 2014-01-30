@@ -1,0 +1,168 @@
+body {
+	background: #FAFAFA;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	position: relative;
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	max-width: calc(480px - 24px);
+	max-height: calc(800px - 24px);
+
+	margin: auto;
+
+	padding: 12px;
+	
+	outline: 8px solid #000000;
+	outline-offset: -8px;
+
+	-webkit-box-shadow:inset 0 0 12px 10px #000000;
+	box-shadow:inset 0 0 12px 10px #000000;
+
+	/*background: #FA7AFA;*/
+
+	background-image: url(../images/bg.png);
+}
+
+.container .desktop {
+	position: relative;
+	display: block;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+
+	min-width: calc( 320px - 24px );
+	min-height: calc( 480px - 24px );
+}
+
+.container .desktop canvas {
+	/*margin: 12px;*/
+}
+
+.window {
+	position: absolute;
+	z-index: 1;
+
+	/*margin: auto;*/
+
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	width: 80%;
+	height: 80%;
+
+	color: #777;
+	background: #EEE;
+
+	-webkit-box-shadow: 0 0 5px 2px #AAA;
+	box-shadow: 0 0 5px 2px #AAA;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.window .header {
+	position: relative;
+	height: 30px;
+	width: 100%;
+
+	line-height: 30px;
+	vertical-align: middle;
+
+	background: #DDD;
+
+	border-bottom: 1px solid #BBB;
+}
+
+.window.active {
+	z-index: 2;
+}
+
+.window.active .header, .window.active .header .btn-close {
+	background: #eeeeee;
+	background: -moz-linear-gradient(top, #eeeeee 0%, #dddddd 50%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(50%,#dddddd), color-stop(100%,#eeeeee));
+	background: -webkit-linear-gradient(top, #eeeeee 0%,#dddddd 50%,#eeeeee 100%);
+	background: -o-linear-gradient(top, #eeeeee 0%,#dddddd 50%,#eeeeee 100%);
+	background: -ms-linear-gradient(top, #eeeeee 0%,#dddddd 50%,#eeeeee 100%);
+	background: linear-gradient(to bottom, #eeeeee 0%,#dddddd 50%,#eeeeee 100%);
+}
+
+.window .header .title {
+	width: calc( 100% - 35px);
+	float: left;
+	padding-left: 5px;
+
+	cursor: move;
+}
+
+.window .header .btn-close {
+	margin: 4px;
+	width: 22px;
+	height: 22px;
+	float: right;
+
+	line-height: 22px;
+	text-align: center;
+
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+
+	background: #DDD;
+
+	cursor: pointer;
+}
+
+.window .header .btn-close:hover {
+	background: #EEE;
+}
+
+.window .content {
+	position: relative;
+	height: 30px;
+	width: calc(100% - 8px);
+	height: calc(100% - 64px);
+
+	background: #ffffff;
+
+	border-top: 4px solid #EEE;
+	border-left: 4px solid #EEE;
+	border-right: 4px solid #EEE;
+}
+
+.window .content canvas {
+	margin: 0px;
+	/*background: red;*/
+}
+
+.window .footer {
+	position: relative;
+	height: 10px;
+	height: 30px;
+
+	line-height: 30px;
+	vertical-align: middle;
+	font-style: italic;
+	text-align: right;
+
+	width: calc( 100% - 10px);
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+
+	/*background: #121700;*/
+}
+
+
